@@ -18,26 +18,23 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import AchievementPage from "./pages/AchievementPage";
 import Landing from "./pages/Landing";
+import Dashboard from "./pages/Dashboard";
 
 import Register from "./components/Register";
 import Login from "./components/Login";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import Contact from "./components/Contact";
-import Dashboard from "./pages/Dashboard";
+import SchoolList from "./components/SchoolList";
 
-
-/* ---------- Layout Wrapper ---------- */
+/* Layout Wrapper */
 function Layout({ children }) {
   const location = useLocation();
   const isLanding = location.pathname === "/";
 
   return (
     <>
-      {/* Navbar only for NON-landing pages */}
       {!isLanding && <Navbar />}
-
-      {/* Add top spacing only when navbar exists */}
       <div className={!isLanding ? "pt-[96px]" : ""}>{children}</div>
     </>
   );
@@ -48,10 +45,10 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          {/* LANDING PAGE (NO NAVBAR) */}
+          {/* Landing Page */}
           <Route path="/" element={<Landing />} />
 
-          {/* MAIN WEBSITE */}
+          {/* Main Website */}
           <Route
             path="/home"
             element={
@@ -67,11 +64,13 @@ function App() {
             }
           />
 
-          {/* OTHER PAGES */}
+          {/* Pages */}
           <Route path="/about" element={<About />} />
           <Route path="/achievementpage" element={<AchievementPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/schools" element={<SchoolList />} />
 
+          {/* Auth */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />

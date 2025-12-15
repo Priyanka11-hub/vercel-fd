@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+/* PAGE */
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e6fff3, #f0fff8);
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* CARD */
+.contact-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 35px 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 128, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.contact-card h2 {
+  color: #166534;
+  margin-bottom: 8px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.contact-card .subtitle {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* INPUT GROUP */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #ecfdf5;
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  transition: 0.3s;
+}
+
+.input-group span {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #166534;
+}
+
+/* INPUTS */
+.input-group input,
+.input-group textarea {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #374151;
+}
+
+/* TEXTAREA */
+.input-group.textarea {
+  align-items: flex-start;
+}
+
+.input-group textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* FOCUS EFFECT */
+.input-group:focus-within {
+  border-color: #15803d;
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.25);
+  background: #dcfce7;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(22, 163, 74, 0.4);
+}
+
+button:disabled {
+  background: #86efac;
+  cursor: not-allowed;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 25px 20px;
+  }
+}

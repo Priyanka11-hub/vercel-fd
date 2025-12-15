@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root,
+.app{
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins",sans-serif;
+}
+
+.input-box-shadow{
+    filter: drop-shadow(-4px -4px 44px rgba(0,0,0,0.08));
+}
+.slick-prev:before,.slick-next:before{
+    color: black;
+    font-size: 40px;
+}
+.slick-next:before{
+    margin-left: -25px;
+}
+.slick-prev{
+    z-index: 9999;
+}
+.category:hover,.icon{
+    fill: #1a9068;
+}
+
+
+
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* PAGE BACKGROUND */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  background:
+    linear-gradient(rgba(232, 255, 241, 0.92), rgba(244, 255, 248, 0.92)),
+    url("https://images.unsplash.com/photo-1506784983877-45594efa4cbe");
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* CARD */
+.form-box {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 32px 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid #dff5e6;
+  text-align: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* HEADINGS */
+h2 {
+  color: #2ecc71;
+  margin-bottom: 6px;
+  font-size: 26px;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
+  border-radius: 10px;
+  border: 1px solid #cfeedd;
+  outline: none;
+  font-size: 14px;
+
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.15);
+}
+
+/* BUTTON */
+button {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 13px;
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+}
+
+/* LINKS */
+.links {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.links p {
+  color: #555;
+}
+
+a {
+  color: #2ecc71;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FORM AREA (school / ngo) */
+.form-area {
+  margin-top: 10px;
+}
+
+/* ANIMATION */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .form-box {
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+
+/* Sub forms (School / NGO) */
+.sub-form {
+  margin-top: 15px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Button loading state */
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Better spacing for inputs */
+.sub-form input,
+.sub-form select {
+  margin-bottom: 12px;
+}
+
+
+.subtitle {
+  font-size: 14px;
+  color: #6bbf91;
+  margin-bottom: 20px;
+}
+
+/* Smooth fade-in animation */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inputs with icons feel */
+input::placeholder {
+  color: #9fcfb3;
+}
+
+/* Button interaction */
+button {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+
+/* ===== AUTH BUTTON GROUP (LOGIN / REGISTER) ===== */
+
+.auth-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.auth-buttons button {
+  flex: 1;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+/* LOGIN BUTTON */
+.auth-buttons .login-btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #ffffff;
+}
+
+.auth-buttons .login-btn:hover {
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.35);
+  transform: translateY(-2px);
+}
+
+/* REGISTER BUTTON */
+.auth-buttons .register-btn {
+  background: #ffffff;
+  color: #27ae60;
+  border: 2px solid #2ecc71;
+}
+
+.auth-buttons .register-btn:hover {
+  background: #2ecc71;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+  .auth-buttons {
+    flex-direction: column;
+  }
+}
+
+/* ===== FORCE LOGIN BUTTON VISIBILITY ===== */
+.auth-page button {
+  margin-top: 18px;
+  background: linear-gradient(135deg, #1a9068, #0f6b4f);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 25px rgba(26, 144, 104, 0.35);
+}
+
+/* Hover effect */
+.auth-page button:hover {
+  background: linear-gradient(135deg, #157a5a, #0c5e44);
+  transform: translateY(-2px);
+}
+
+/* Disabled state */
+.auth-page button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
